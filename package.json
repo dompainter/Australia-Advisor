@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "babel-node ./node_modules/webpack-dev-server/bin/webpack-dev-server --open",
     "lint": "eslint src/**/*.js",
-    "test": "mocha -w --require @babel/register src/test/*.test.js src/lib/test/**.test.js",
+    "test": "mocha -w --require @babel/register src/lib/test/**.test.js",
     "webpack": "babel-node ./node_modules/webpack/bin/webpack"
   },
   "repository": {

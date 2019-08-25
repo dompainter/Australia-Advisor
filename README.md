@@ -12,4 +12,7 @@ React based project, using styled components to provide a user interface for sea
 - `npm run webpack` to build and bundle the project into a build directory (not provided here)
 - `npm run test` to execute tests using Mocha
 
+### Check it out
+Site has been deployed using Netlify: https://australia-advisor.netlify.com/
+
 Project stubbed from https://github.com/dompainter/dms
