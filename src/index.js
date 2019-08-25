@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom'
 import styled, { createGlobalStyle } from 'styled-components'
 
 import getData from './lib/get-data'
-import Header from './components/header'
+
+import Carousel from './components/carousel'
+import Title from './components/title'
 
 const CAROUSEL_API_URL = 'http://demo6045376.mockable.io/carousel'
 // const FEATURED_API_URL = 'http://demo6045376.mockable.io/featured'
@@ -22,9 +24,9 @@ const AppContainer = styled.main`
     height: 100%;
 `
 
-const ContentContainer = styled.main`
+const ContentContainer = styled.section`
     background-color: #FFF;
-    padding: 15px;
+    padding: 15px 20px;
 `
 
 const App = () => {
@@ -41,10 +43,10 @@ const App = () => {
 
     return (
         <AppContainer>
-            <Header title="Australia-Advisor"/>
             <ContentContainer>
+                <Title>Popular around you</Title>
                 {carouselItems.length &&
-                    <span>{carouselItems[0].title}</span>
+                    <Carousel items={carouselItems} />
                 }
             </ContentContainer>
             <GlobalStyle />
