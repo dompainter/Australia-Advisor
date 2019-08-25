@@ -28,7 +28,7 @@ module.exports = {
                 use: [
                     'css-loader' // translates CSS into CommonJS
                 ]
-            },
+            }
         ]
     },
     plugins: [
