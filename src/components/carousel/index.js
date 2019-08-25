@@ -8,7 +8,11 @@ const CarouselContainer = styled.div`
     display: flex;
     flex-direction: row;
     margin: 15px 0;
-    overflow: hidden;
+    overflow-x: auto;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
 `
 
 const Carousel = ({ items }) => (
@@ -16,7 +20,6 @@ const Carousel = ({ items }) => (
         {items.map((item, index) => (
             <Tile
                 key={`carousel-item-${index}`}
-                width="33%"
                 {...item}
             />
         ))}

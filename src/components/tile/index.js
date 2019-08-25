@@ -4,7 +4,11 @@ import styled from 'styled-components'
 
 const TileContainer = styled.div`
     border: 1px solid #E1E1E1;
-    width: ${props => props.width};
+    margin: 0 20px;
+
+    &:focus {
+        outline: 0;
+    }
 `
 
 const ImageWrapper = styled.div`
@@ -36,7 +40,7 @@ const Location = styled.span`
 `
 
 const Tile = ({ img, title, location, width }) => (
-    <TileContainer width={width}>
+    <TileContainer tabIndex={0} width={width}>
         <ImageWrapper>
             <StyledImage src={img} alt={title} />
         </ImageWrapper>
