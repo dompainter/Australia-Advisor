@@ -8,7 +8,7 @@ import Carousel from './components/carousel'
 import Title from './components/title'
 import Search from './components/search'
 
-const CAROUSEL_API_URL = 'http://demo6045376.mockable.io/carousel'
+const CAROUSEL_API_URL = 'https://demo6045376.mockable.io/carousel'
 
 const GlobalStyle = createGlobalStyle`
     body {
