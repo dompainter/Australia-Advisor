@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "babel-node ./node_modules/webpack-dev-server/bin/webpack-dev-server --open",
     "lint": "eslint src/**/*.js",
-    "test": "mocha -w src/test/*.test.js",
+    "test": "mocha -w --require @babel/register src/test/*.test.js src/lib/test/**.test.js",
     "webpack": "babel-node ./node_modules/webpack/bin/webpack"
   },
   "repository": {
@@ -35,6 +35,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "html-webpack-plugin": "^3.2.0",
     "mocha": "^6.2.0",
+    "nock": "^10.0.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "webpack": "^4.35.3",
@@ -42,6 +43,7 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
+    "node-fetch": "^2.6.0",
     "prop-types": "^15.7.2",
     "styled-components": "^4.3.2"
   }

@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import styled, { createGlobalStyle } from 'styled-components'
 
+import getData from './lib/get-data'
 import Header from './components/header'
+
+const CAROUSEL_API_URL = 'http://demo6045376.mockable.io/carousel'
+// const FEATURED_API_URL = 'http://demo6045376.mockable.io/featured'
 
 const GlobalStyle = createGlobalStyle`
     body {
@@ -24,11 +28,24 @@ const ContentContainer = styled.main`
 `
 
 const App = () => {
+    const [carouselItems, setCarouselItems] = useState([])
+
+    // Get API data on mount
+    useEffect(() => {
+        async function fetchData () {
+            const carouselItems = getData(CAROUSEL_API_URL)
+            setCarouselItems(await carouselItems)
+        }
+        fetchData()
+    }, [])
+
     return (
         <AppContainer>
             <Header title="Australia-Advisor"/>
             <ContentContainer>
-                <span>Content goes here</span>
+                {carouselItems.length &&
+                    <span>{carouselItems[0].title}</span>
+                }
             </ContentContainer>
             <GlobalStyle />
         </AppContainer>
